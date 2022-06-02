@@ -2,5 +2,29 @@
   <h1>Application for FullStack JS Developper !</h1>
 
   <h3>Upload your audio file</h3>
-  <app-upload-image></app-upload-image>
+  <form [formGroup]="formImage" (ngSubmit)="onSubmit()">
+    <div>
+      <app-input-image></app-input-image>
+    </div>
+    <div>
+      <app-input-video></app-input-video>
+    </div>
+    <br />
+    <div>
+      <app-input-audio></app-input-audio>
+    </div>
+    <br />
+    <div>
+      <label>
+        Name:
+        <input type="text" formControlName="fileName" placeholder="Name of the file" />
+        <p style="color: red; margin-top: 0px" *ngIf="formImage.controls['fileName']?.errors">
+          Name must be a string !
+        </p>
+      </label>
+    </div>
+    <button type="submit">Send</button>
+  </form>
+
+  <app-preview [file]="file"></app-preview>
 </div>
