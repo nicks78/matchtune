@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import * as ffmpeg from '@ffmpeg/ffmpeg';
 import { createFFmpeg, fetchFile } from '@ffmpeg/ffmpeg';
 import { Observable } from 'rxjs';
 
@@ -41,7 +40,6 @@ export class FileService {
     console.log('[VIDEO]', this.video);
     console.log('[AUDIO]', this.audio);
     console.log('[IMAGE]', this.image);
-    console.log('[FFMPEG]----------', ffmpeg);
     try {
       await this.ffmpeg.load();
 
