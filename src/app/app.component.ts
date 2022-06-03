@@ -11,6 +11,7 @@ import { UploadService } from 'src/app/shared/services/upload.service';
 export class AppComponent implements OnInit {
   formImage!: FormGroup;
   file!: string;
+  videoSrc!: any;
 
   constructor(
     private _fb: FormBuilder,
@@ -30,6 +31,6 @@ export class AppComponent implements OnInit {
   }
 
   onSubmit() {
-    this._fileService.mergeAudioAndVideo();
+    this.videoSrc = this._fileService.mergeAudioAndVideo();
   }
 }

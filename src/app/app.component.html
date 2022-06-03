@@ -26,5 +26,5 @@
     <button type="submit">Send</button>
   </form>
 
-  <app-preview [file]="file"></app-preview>
+  <app-preview *ngIf="videoSrc" [file]="videoSrc"></app-preview>
 </div>
